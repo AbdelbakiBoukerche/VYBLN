@@ -123,3 +123,6 @@ lib/generated_plugin_registrant.dart
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter,firebase,vscode
+
+#User defined
+google-services.json
