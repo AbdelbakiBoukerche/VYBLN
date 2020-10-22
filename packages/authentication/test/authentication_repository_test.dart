@@ -157,5 +157,37 @@ main() {
         );
       });
     });
+
+    group('logOut', () {
+      test('Calls signOut', () async {
+        when(firebaseAuth.signOut()).thenAnswer((_) => null);
+        await authenticationRepository.logOut();
+        verify(firebaseAuth.signOut()).called(1);
+      });
+
+      test('Throws LogOutFailure when signOut throws', () {
+        when(firebaseAuth.signOut()).thenThrow(Exception());
+        expect(
+          authenticationRepository.logOut(),
+          throwsA(isA<LogOutFailure>()),
+        );
+      });
+    });
+
+    group('User', () {
+      test('Emit VyblnUser.empty when firebase user is null', () async {
+        when(firebaseAuth.authStateChanges())
+            .thenAnswer((_) => Stream.value(null));
+        await expectLater(authenticationRepository.user,
+            emitsInOrder(const <VyblnUser>[VyblnUser.empty]));
+      });
+
+      test('Emit VyblnUser when firebase user is not null', () async {
+        when(firebaseAuth.authStateChanges())
+            .thenAnswer((_) => Stream.value(MockFirebaseUser()));
+        await expectLater(authenticationRepository.user,
+            emitsInOrder(const <VyblnUser>[user]));
+      });
+    });
   });
 }
