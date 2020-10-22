@@ -6,8 +6,8 @@ enum ConfirmedPasswordValidationError { invalid }
 
 class ConfirmPassword
     extends FormzInput<String, ConfirmedPasswordValidationError> {
-  ConfirmPassword.pure({this.password = ''}) : super.pure('');
-  ConfirmPassword.dirty({@required this.password, String value = ''})
+  const ConfirmPassword.pure({this.password = ''}) : super.pure('');
+  const ConfirmPassword.dirty({@required this.password, String value = ''})
       : super.dirty(value);
 
   final String password;
