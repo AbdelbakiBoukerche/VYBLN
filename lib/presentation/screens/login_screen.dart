@@ -42,7 +42,12 @@ class LoginForm extends StatelessWidget {
       },
       child: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [
+            _EmailInput(),
+            _PasswordInput(),
+            _LoginButton(),
+            _SignUpButtton(),
+          ],
         ),
       ),
     );
