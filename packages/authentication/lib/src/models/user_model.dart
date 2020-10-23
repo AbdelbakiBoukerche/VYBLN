@@ -2,11 +2,6 @@ import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 
 class VyblnUser extends Equatable {
-  final String email;
-  final String id;
-  final String name;
-  final String photo;
-
   const VyblnUser({
     @required this.email,
     @required this.id,
@@ -14,6 +9,11 @@ class VyblnUser extends Equatable {
     @required this.photo,
   })  : assert(email != null),
         assert(id != null);
+
+  final String email;
+  final String id;
+  final String name;
+  final String photo;
 
   static const empty = VyblnUser(email: '', id: '', name: null, photo: null);
 
