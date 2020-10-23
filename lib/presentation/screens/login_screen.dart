@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:formz/formz.dart';
 import 'package:authentication_repository/authentication_repository.dart';
