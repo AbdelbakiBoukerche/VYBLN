@@ -144,7 +144,7 @@ class _PasswordTextField extends StatelessWidget {
                 context.bloc<LoginCubit>().passwordChanged(password),
             key: const Key('loginForm_password_textField'),
             cursorColor: kGreenLight,
-            keyboardType: TextInputType.emailAddress,
+            obscureText: true,
             decoration: InputDecoration(
               labelText: "Password",
               labelStyle: TextStyle(

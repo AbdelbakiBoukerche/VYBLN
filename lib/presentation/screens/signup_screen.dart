@@ -139,7 +139,7 @@ class _PasswordTextField extends StatelessWidget {
                 context.bloc<SignUpCubit>().passwordChanged(password),
             key: const Key('signUpForm_password_textField'),
             cursorColor: kGreenLight,
-            keyboardType: TextInputType.emailAddress,
+            obscureText: true,
             decoration: InputDecoration(
               labelText: "Password",
               labelStyle: TextStyle(
@@ -186,7 +186,7 @@ class _ConfirmPasswordTextField extends StatelessWidget {
                 context.bloc<SignUpCubit>().confirmedPasswordChanged(password),
             key: const Key('signUpForm_confirmPassword_textField'),
             cursorColor: kGreenLight,
-            keyboardType: TextInputType.emailAddress,
+            obscureText: true,
             decoration: InputDecoration(
               labelText: "Confirm Password",
               labelStyle: TextStyle(
