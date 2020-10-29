@@ -193,6 +193,7 @@ class RectangularGreenButton extends StatelessWidget {
             height: 40,
             width: 116,
             child: RaisedButton(
+              key: Key('loginForm_login_flatButton'),
               color: kGreenLight,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
